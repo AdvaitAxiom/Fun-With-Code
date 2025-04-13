@@ -5,7 +5,7 @@ public class Compare {
 
         Integer c = 128;
         Integer d = 128;
-        System.out.println(a==b);
-        System.out.println(c==d);
+        System.out.println(a==b);   //int compares values not ref
+        System.out.println(c==d);   //Integer is an object wrapper for int so compares object references, not values (unless unboxed).  Java caches Integer objects from -128 to 127
     }
 }
