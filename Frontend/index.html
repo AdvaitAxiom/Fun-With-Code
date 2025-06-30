@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Day Question</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffecf1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .question-container {
+            text-align: center;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 90%;
+        }
+
+        .button-container {
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 0 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: transform 0.2s;
+        }
+
+        .yes-btn {
+            background-color: #ff6b9d;
+            color: white;
+        }
+
+        .no-btn {
+            background-color: #cccccc;
+            color: #333;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+        }
+
+        .result-container {
+            margin-top: 20px;
+            display: none;
+        }
+
+        .gif-result {
+            max-width: 200px;
+            border-radius: 10px;
+        }
+
+        h2 {
+            color: #ff4081;
+        }
+
+        .heart {
+            color: #ff4081;
+        }
+
+        .cssload-heart {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .cssload-heart-inner {
+            display: inline-block;
+            position: relative;
+            height: 48px;
+            width: 48px;
+            background: url('https://i.imgur.com/Yl3Bxq2.gif') no-repeat;
+            background-size: contain;
+        }
+        .wish{
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 24px;
+            color: #ff4081;
+            text-align: center;
+            font-weight: bold;
+        }
+        #heart1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -25px;
+    margin-left: -150px;
+    background-color: #ffdae0;
+    height: 50px;
+    width: 50px;
+    opacity: 0;
+}
+
+#heart2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -90px;
+    margin-left: -50px;
+    background-color: #ffdae0;
+    height: 50px;
+    width: 50px;
+    opacity: 0;
+}
+
+#heart3 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: 50px;
+    margin-left: -50px;
+    background-color: #ffdae0;
+    height: 50px;
+    width: 50px;
+    opacity: 0;
+}
+
+#heart4 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -90px;
+    margin-left: 100px;
+    background-color: #ffdae0;
+    height: 50px;
+    width: 50px;
+    opacity: 0;
+}
+
+#heart5 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: 25px;
+    margin-left: 100px;
+    background-color: #ffdae0;
+    height: 50px;
+    width: 50px;
+    opacity: 0;
+}
+
+.hearts:after {
+    background-color: #ffdae0;
+    content: "";
+    border-radius: 50%;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 0px;
+    left: 25px;
+  }
+  .hearts:before {
+    background-color: #ffdae0;
+    content: "";
+    border-radius: 50%;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: -25px;
+    left: 0px;
+  }
+
+.love:hover > #heart1 {
+  animation-name: hearts1;
+  animation-duration: 1.1s;
+  animation-iteration-count: infinite;
+}
+.love:hover > #heart2 {
+  animation-name: hearts2;
+  animation-duration: 0.9s;
+  animation-iteration-count: infinite;
+}
+.love:hover > #heart3 {
+  animation-name: hearts3;
+  animation-duration: 0.9s;
+  animation-iteration-count: infinite;
+}
+.love:hover > #heart4 {
+  animation-name: hearts4;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+.love:hover > #heart5 {
+  animation-name: hearts5;
+  animation-duration: 1.1s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes hearts1 {
+  0% {
+    transform: scale(0.1, 0.1) rotate(-45deg);
+    opacity: 0.8;
+  } 
+}
+@keyframes hearts2 {
+  20% {
+    transform: scale(0.2, 0.2) rotate(-45deg);
+    opacity: 0.8;
+  }
+}
+@keyframes hearts3 {
+  40% {
+    transform: scale(0.3, 0.3) rotate(-45deg);
+    opacity: 0.8;
+  }
+}
+@keyframes hearts4 {
+  60% {
+    transform: scale(0.4, 0.4) rotate(-45deg);
+    opacity: 0.8;
+  }
+}
+@keyframes hearts5 {
+  80% {
+    transform: scale(0.6, 0.6) rotate(-45deg);
+    opacity: 0.8;
+  }
+}
+
+#button:active {
+  box-shadow: 0 5px 5px rgba(0,0,0,0.23);
+  transform: scale(0.99);
+}
+    </style>
+</head>
+
+<body>
+    <div class="wish">Good Morning volu rani ❤ </div>
+    <div class="question-container">
+        <div class="question">
+            <h2>Do you love me? <span class="heart">❤</span></h2>
+        </div>
+        <div class="button-container">
+            <div class="love">
+                <button class="yes-btn">Yes</button>
+                <div id="heart1" class="hearts"></div>
+                <div id="heart2" class="hearts"></div>
+                <div id="heart3" class="hearts"></div>
+                <div id="heart4" class="hearts"></div>
+                <div id="heart5" class="hearts"></div>
+            </div>
+            <button class="no-btn">No</button>
+        </div>
+        <div class="result-container">
+            <img class="gif-result" src="WhatsApp Image 2025-07-01 at 00.26.52_c31f7eba.jpg" alt="Love gif">
+            <p>I knew it! ❤️</p>
+        </div>
+        <div class="cssload-heart">
+            <div class="cssload-heart-inner"></div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const yesBtn = document.querySelector('.yes-btn');
+            const noBtn = document.querySelector('.no-btn');
+            const resultContainer = document.querySelector('.result-container');
+            const questionContainer = document.querySelector('.question');
+            const buttonContainer = document.querySelector('.button-container');
+
+            yesBtn.addEventListener('click', function () {
+                resultContainer.style.display = 'block';
+                buttonContainer.style.display = 'none';
+            });
+
+            // Make the No button run away from cursor
+            noBtn.addEventListener('mouseover', function () {
+                const maxX = window.innerWidth - this.offsetWidth;
+                const maxY = window.innerHeight - this.offsetHeight;
+
+                const randomX = Math.floor(Math.random() * maxX);
+                const randomY = Math.floor(Math.random() * maxY);
+
+                this.style.position = 'absolute';
+                this.style.left = randomX + 'px';
+                this.style.top = randomY + 'px';
+            });
+
+            // If somehow they click No, change it to Yes
+            noBtn.addEventListener('click', function () {
+                resultContainer.style.display = 'block';
+                buttonContainer.style.display = 'none';
+            });
+        });
+    </script>
+</body>
+
+</html>
